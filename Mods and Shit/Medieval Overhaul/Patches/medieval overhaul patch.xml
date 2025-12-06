@@ -442,6 +442,12 @@
             </ReplaceLib.ReplacerDef>
           </value>
         </li>
+        <li Class="PatchOperationRemove">
+          <xpath>*/ThingDef[defName = "BarrelProcessor"]/comps/li[@Class="ProcessorFramework.CompProperties_Processor"]/processes/li[.="VFEM2_Mead"]</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>*/ThingDef[defName = "BarrelProcessor"]/comps/li[@Class="ProcessorFramework.CompProperties_Processor"]/processes/li[.="VFEM2_Wine"]</xpath>
+        </li>
       </operations>
     </match>
   </Operation>
