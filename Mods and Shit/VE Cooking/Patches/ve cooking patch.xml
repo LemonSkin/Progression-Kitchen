@@ -10,7 +10,7 @@
   <!-- Medieval Overhaul -->
   <Operation Class="PatchOperationFindMod">
     <mods>
-      <li>Vanilla Cooking Expanded</li>
+      <li>Medieval Overhaul</li>
     </mods>
     <match Class="PatchOperationSequence">
       <operations>
@@ -29,6 +29,36 @@
           </value>
         </li>
         <!-- Bakes cookable in oven and electric cooking table -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/RecipeDef[defName="VCE_CookBakeSimple" or 
+            defName="VCE_CookBakeSimpleBulk" or
+            defName="VCE_CookBakeFine" or
+            defName="VCE_CookBakeFineBulk" or
+            defName="VCE_CookBakeLavish" or
+            defName="VCE_CookBakeLavishBulk" or
+            defName="VCE_CookBakeGourmet" or
+            defName="VCE_CookBakeGourmetBulk"
+            ]/recipeUsers</xpath>
+          <value>
+            <recipeUsers>
+              <li>DankPyon_StoneOven</li>
+              <li>DankPyon_StoneOvenLarge</li>
+            </recipeUsers>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/RecipeDef[defName="VCE_CookBakeSimpleBulk" or
+            defName="VCE_CookBakeFineBulk" or
+            defName="VCE_CookBakeLavishBulk" or
+            defName="VCE_CookBakeGourmetBulk"
+            ]/recipeUsers</xpath>
+          <Order>Append</Order>
+          <value>
+            <recipeUsers>
+              <li>DankPyon_StoneOvenLarge</li>
+            </recipeUsers>
+          </value>
+        </li>
       </operations>
     </match>
   </Operation>
